@@ -1,19 +1,17 @@
-const PokemonContainer = document.getElementById("pokemon__containerID");
-const SearchContainer = document.getElementById("search__containerID");
+const PokemonContainer = document.getElementById("pokemon_containerID");
+const SearchContainer = document.getElementById("search_containerID");
 const SearchElement = document.createElement("input");
+const PokemonNumber = 151;
 SearchElement.setAttribute("type", "text");
 SearchElement.setAttribute("name", "searchBar");
-SearchElement.setAttribute("placeholder", "Search...");
 SearchContainer.appendChild(SearchElement);
-
-const PokemonNumber = 151;
 
 const createPokemonCard = (pokemon) => {
   const PokemonElement = document.createElement("div");
   const PokemonName = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
-  PokemonElement.setAttribute("id", PokemonName);
   const PokemonID = pokemon.id;
   const PokemonType = pokemon.types[0].type.name;
+  PokemonElement.setAttribute("id", PokemonName);
   const PokemonTypeColors = {
     fire: "#EE8130",
     grass: "#7AC74C",
@@ -37,15 +35,15 @@ const createPokemonCard = (pokemon) => {
   const AddColors = PokemonTypeColors[PokemonType];
   PokemonElement.style.backgroundColor = AddColors;
   const PokemonInnerHTML = `
-    <div class="pokemon__imageContainer" id="${PokemonName}">
+    <div class="pokemon_imageContainer" id="${PokemonName}">
       <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${PokemonID}.png"/>
     </div>
-    <div class="pokemon__infomationContainer">
-      <span class="pokemon__id">#${PokemonID.toString().padStart(3, "0")}</span>
-      <h3 class="pokemon__name">${PokemonName}</h3>
-      <small class="pokemon__type">Type: <span>${PokemonType}</span></small>
+    <div class="pokemon_infomationContainer">
+      <span class="pokemon_id">#${PokemonID.toString()}</span>
+      <h3 class="pokemon_name">${PokemonName}</h3>
+      <small class="pokemon_type">Type: <span>${PokemonType}</span></small>
     </div>`;
-  PokemonElement.setAttribute("class", "pokemon__card");
+  PokemonElement.setAttribute("class", "pokemon_card");
   PokemonElement.innerHTML = PokemonInnerHTML;
   PokemonContainer.appendChild(PokemonElement);
 };
@@ -66,14 +64,14 @@ const receivePokemons = async () => {
 
 receivePokemons();
 
-const createSearchFilter = (pokemonData) => {
-  const cards = document.querySelectorAll(".pokemon__card");
+const createSearchFilter = () => {
+  const cards = document.querySelectorAll(".pokemon_card");
   SearchElement.addEventListener("keyup", (event) => {
     const val = event.target.value.toLowerCase();
     cards.forEach((card) => {
       if (card.id.toLowerCase().includes(val)) {
         card.style.display = "block";
-      } else {
+      }else {
         card.style.display = "none";
       }
     });
