@@ -13,10 +13,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-h1 {
-  letter-spacing: 3px;
-}
-
 .pokemon_container {
   display: flex;
   flex-wrap: wrap;
@@ -28,8 +24,8 @@ h1 {
 .pokemon_card {
   background: white;
   border-radius: 20px;
-  padding: 20px 40px;
-  margin: 10px;
+  padding: 30px 40px;
+  margin: 5px;
 }
 
 .pokemon_imageContainer {
@@ -40,11 +36,6 @@ h1 {
 
 .pokemon_imageContainer img {
   width: 100%;
-}
-
-.pokemon_infomationContainer {
-  margin-top: 20px;
-  text-align: center;
 }
 
 .pokemon_id {
