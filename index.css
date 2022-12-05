@@ -49,3 +49,42 @@ body {
   margin: 15px 0 7px 0;
   letter-spacing: 1px;
 }
+
+@media screen and (max-width:400px)
+{
+  .pokemon_card {
+    background: white;
+    border-radius: 0.5rem;
+    padding: 0.1rem;
+    margin: 5px;
+  }
+
+  .pokemon_imageContainer {
+    margin-top: 1rem;
+    width: 7rem;
+    height: 6rem;
+  }
+
+  .pokemon_imageContainer img {
+    width: 70%;
+  }
+
+  .pokemon_name {
+    margin: 0.1rem;
+  }
+
+  .pokemon_id {
+    background: white;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    padding: 5px 10px;
+  }
+
+  h3{
+    font-size: 1rem;
+  }
+
+  .pokemon_type{
+    font-size: 0.7rem;
+  }
+}
