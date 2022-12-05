@@ -43,24 +43,24 @@ const createPokemonCard = (pokemon) => {
   const AddColors = PokemonTypeColors[PokemonType1];
   PokemonElement.style.backgroundColor = AddColors;
   PokemonInnerHTML = `
-    <div class="pokemon__imageContainer" id="${PokemonName}">
+    <div class="pokemon_imageContainer" id="${PokemonName}">
       <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${PokemonID}.png"/>
     </div>
-    <div class="pokemon__infomationContainer">
-      <span class="pokemon__id">#${PokemonID.toString().padStart(3, "0")}</span>
-      <h3 class="pokemon__name">${PokemonName}</h3>
-      <small class="pokemon__type">Tipo: <span>${PokemonType1}</span></small><br>
+    <div class="pokemon_infomationContainer">
+      <span class="pokemon_id">#${PokemonID.toString().padStart(3, "0")}</span>
+      <h3 class="pokemon_name">${PokemonName}</h3>
+      <small class="pokemon_type">Tipo: <span>${PokemonType1}</span></small><br>
     </div>`;
   if(pokemon.types[1] != null){
     const PokemonType2 = pokemon.types[1].type.name 
     PokemonInnerHTML = `
-    <div class="pokemon__imageContainer" id="${PokemonName}">
+    <div class="pokemon_imageContainer" id="${PokemonName}">
       <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${PokemonID}.png"/>
     </div>
-    <div class="pokemon__infomationContainer">
-      <span class="pokemon__id">#${PokemonID.toString().padStart(3, "0")}</span>
-      <h3 class="pokemon__name">${PokemonName}</h3>
-      <small class="pokemon__type">Tipo: <span>${PokemonType1}/${PokemonType2}</span></small><br>
+    <div class="pokemon_infomationContainer">
+      <span class="pokemon_id">#${PokemonID.toString().padStart(3, "0")}</span>
+      <h3 class="pokemon_name">${PokemonName}</h3>
+      <small class="pokemon_type">Tipo: <span>${PokemonType1}/${PokemonType2}</span></small><br>
     </div>`};
   PokemonElement.setAttribute("class", "pokemon_card");
   PokemonElement.innerHTML = PokemonInnerHTML;
