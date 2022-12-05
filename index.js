@@ -49,7 +49,7 @@ const createPokemonCard = (pokemon) => {
     <div class="pokemon_infomationContainer">
       <span class="pokemon_id">#${PokemonID.toString().padStart(3, "0")}</span>
       <h3 class="pokemon_name">${PokemonName}</h3>
-      <small class="pokemon_type">Tipo: <span>${PokemonType1}</span></small><br>
+      <small class="pokemon_type">Type: <span>${PokemonType1}</span></small><br>
     </div>`;
   if(pokemon.types[1] != null){
     const PokemonType2 = pokemon.types[1].type.name 
@@ -60,7 +60,7 @@ const createPokemonCard = (pokemon) => {
     <div class="pokemon_infomationContainer">
       <span class="pokemon_id">#${PokemonID.toString().padStart(3, "0")}</span>
       <h3 class="pokemon_name">${PokemonName}</h3>
-      <small class="pokemon_type">Tipo: <span>${PokemonType1}/${PokemonType2}</span></small><br>
+      <small class="pokemon_type">Type: <span>${PokemonType1}/${PokemonType2}</span></small><br>
     </div>`};
   PokemonElement.setAttribute("class", "pokemon_card");
   PokemonElement.innerHTML = PokemonInnerHTML;
