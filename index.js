@@ -1,7 +1,6 @@
 const PokemonContainer = document.getElementById("pokemon_containerID");
 const SearchContainer = document.getElementById("search_containerID");
 const SearchElement = document.createElement("input");
-const PokemonNumber = 905;
 var j = 20;
 SearchElement.setAttribute("type", "text");
 SearchElement.setAttribute("name", "searchBar");
@@ -10,10 +9,10 @@ SearchContainer.appendChild(SearchElement);
 window.addEventListener('scroll',()=>{
   if(window.scrollY + window.innerHeight >= 
   document.documentElement.scrollHeight){
-    receivePokemons(false);
     j += 20;
+    receivePokemons();
   }
-})
+});
 
 const createPokemonCard = (pokemon) => {
   const PokemonElement = document.createElement("div");
@@ -81,7 +80,7 @@ const receivePokemons = async () => {
       await getPokemons(item);
     }
   }else{
-    for (let item = j; item <= j; item++) {
+    for (let item = j; item <= j+19; item++) {
       await getPokemons(item);
     }
   }
