@@ -5,12 +5,15 @@ var j = 1;
 SearchElement.setAttribute("type", "text");
 SearchElement.setAttribute("name", "searchBar");
 SearchContainer.appendChild(SearchElement);
-
+var peticionEnCurso=false;
 window.addEventListener('scroll',()=>{
   if(window.scrollY + window.innerHeight >= 
   document.documentElement.scrollHeight){
-    j += 20;
-    receivePokemons();
+    if (!peticionEnCurso){
+      j += 20;
+      peticionEnCurso=true;
+      receivePokemons();
+    }
   }
 });
 
@@ -85,6 +88,7 @@ const receivePokemons = async () => {
     }
   }
   createSearchFilter();
+  peticionEnCurso = false;
 };
 
 receivePokemons();
