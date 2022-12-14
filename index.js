@@ -1,7 +1,7 @@
 const PokemonContainer = document.getElementById("pokemon_containerID");
 const SearchContainer = document.getElementById("search_containerID");
 const SearchElement = document.createElement("input");
-var j = 20;
+var j = 1;
 SearchElement.setAttribute("type", "text");
 SearchElement.setAttribute("name", "searchBar");
 SearchContainer.appendChild(SearchElement);
